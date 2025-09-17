@@ -1,0 +1,20 @@
+int main({
+	using namespace std;
+	
+	string message = "Hello, World!";
+	
+	int messageLength = message.length();
+	int messageSize = message.size();
+	
+	cout<< "length: " << messageLength <<endl << "Size: " << messageSize << endl;
+	
+	char firstChar = message [0];
+	char lastChar = message [message.length()-1]; // b/c index numebr starts from 0 -12 eventhough in total you have 13 characters (total length 01)
+	
+	cout << "First Char = " << firstChar << endl << "Last Char = " << lastChar << endl;
+	
+	
+	return 0;
+	
+	
+}
