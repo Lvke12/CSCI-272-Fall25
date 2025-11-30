@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+
+
+//.h file 
+class MyNumber {
+private:
+    int value;
+
+public:
+// Constructor
+    MyNumber(int val = 0){
+        value = val;
+    }
+
+    //getter to read the stored value 
+    int getValue() const {
+        return value;
+    }
+
+    //overload minus: -num
+    //this will not chanfe the original object
+    MyNumber operator-() const {
+        return MyNumber(-value);
+    }
+
+    //overload the prefix increment: ++num
+    //this will change the current obj (increment value by 1  )
+    MyNumber& operator++() {
+        ++value;
+        return MyNumber(value);
+    }
+
+};
+
+//main file
+int main() {
+    MyNumber num1(5);
+
+    cout << "Original value: " << num1.getValue() << endl;
+
+    //use overloaded unary minus
+    MyNumber negative = -num; // call the MyNumber::operator-()
+    cout << "After unary minus: " << negative.getValue() << endl;
+
+    //use overloaded prefix increment ++
+    MyNumber incremented = ++num; 
+    cout << "After applying ++num, num is: " << num.getValue() << endl;
+    cout << "Value returned by the ++num: " << incremented.getValue() << endl
+
+    return 0;
+}
