@@ -1,0 +1,8 @@
+//you would never recieve a badbit true unless tour ram crashes
+//failbit- trying to read a file that hasn't been created
+// - not admin permission will also failbit
+//Overloaded bool Operator - Study bc of Knowledge check it will be trickier now
+// Always close files as soon it is no longer in a program - because of security concerns, save space, data may be corrupted, 
+//always close the file or the data base connection when done with it
+
+// read 18, 19, 20 slides for code on wednesday 
