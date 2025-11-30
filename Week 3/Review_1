@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+// Function to calculate average
+double average (int arr[], int size){
+	int sum = 0;
+	
+	for (int i = 0; i < size; i++ ){
+		sum += arr[i];
+	}
+	return  (double)sum/size; // return average
+}
+
+int main(){
+	
+	int scores[4] = {5, 10, 15, 20};
+	int sum = 0;
+	
+	
+	cout<<"Average = " << average(scores, 4) << endl;
+	
+	return 0;
+}
