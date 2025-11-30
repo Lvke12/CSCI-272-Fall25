@@ -1,0 +1,62 @@
+#include <iostream> 
+#include <vector>   //Again we need this to create our vector
+
+using namespace std;
+
+//Wehave our function that returns the average student id
+double getAverage(const vector<int>& ids) {//we are passing by reference
+    int sum = 0;
+    for (int id : ids) {
+        //range based for loop like the first scenario
+        sum += id;
+    }
+    return (double)sum / ids.size(); 
+    //we return average so we can continue and be able to use
+}
+
+//This is our second function
+int getHighest(const vector<int>& ids) {//we used const vector <int>& again
+    int highest = ids[0];
+    //With this we check ids to see if we find highest ids
+    for (int id : ids) {
+        if (id > highest) {
+            highest = id;
+        }
+    }
+    
+    // we do our loop again so we can get returned the highest
+    return highest; 
+}
+
+int main() {
+  //now we can create our vector
+    vector<int> studentIDs;
+
+//now we add our 10 student ids instead of cin
+    studentIDs.push_back(74354154);
+    studentIDs.push_back(65186945);
+    studentIDs.push_back(16239670);
+    studentIDs.push_back(10293463);
+    studentIDs.push_back(59374968);
+    studentIDs.push_back(68597235);
+    studentIDs.push_back(37840243);
+    studentIDs.push_back(19398792);
+    studentIDs.push_back(98326745);
+    studentIDs.push_back(79359036);
+
+    //we make surewe print them out
+    cout << "Student IDs:\n";
+    for (int i = 0; i < studentIDs.size(); i++) {
+        cout << studentIDs[i] << " ";
+    }
+    cout << endl;
+
+    //now with all the functions we will put them together to get our result
+    double averageID = getAverage(studentIDs);
+    int highestID = getHighest(studentIDs);
+
+    cout << "Average Student ID: " << averageID << endl;
+    cout << "Highest Student ID: " << highestID << endl;
+
+    return 0;
+}
