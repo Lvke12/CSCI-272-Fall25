@@ -1,0 +1,45 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+
+using namespace std;
+
+int main (){
+    //created file
+    ofstream outClientFile("section1.txt", ios::out);
+
+    //check if file exist - check if we have the file
+    //if not, show warning
+    if(!outClientFile){
+        cerr << "File could not be opened.\n" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    cout<< "Enter account, name, and balance. (space seperted)\n" << endl;
+        << "Sample: 100 Avijit 100.20\n";
+        << "Enter EOF (ctrl+z in Windows / Ctrl+D  in Mac/Linux) to end. \n";
+
+    int account;
+    string name;
+    double balance;
+
+    while (true){
+        if (cin>> account>> name >> balance){
+            outClientFile << account << " " << name << " " << balance << endl;
+            cout << "?";
+        }else if (cin.eof()){
+            //If we reach end of file
+            cout<<"\nEnd of file reached. Data saved. \n";
+            break;
+        }else {
+            //input error (missing  or invalid data)
+            cerr << "Invlaid input format, Please re-enter (e.g. 100 Alex 50.28)\n";
+            cin.clear(); //clear the fail state becaus ethere is an error and there is an invalid state so we have to clear it
+            cin.ignore(100, '\n'); //discards the invalid input
+            
+        }
+    }
+outClientFile.close(); //close the file
+return 0;
+
+}
