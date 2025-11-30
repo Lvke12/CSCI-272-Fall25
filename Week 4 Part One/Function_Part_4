@@ -1,0 +1,29 @@
+using namespace std;
+#include <iostream>
+
+double divide(){
+    double num1, num2;
+    cout<<"Enter the first number: ";
+    cin>>num1;
+    cout<<"Enter the second number: ";
+    cin>>num2;
+//loop
+    if(num2 !=0)
+    return num1/num2;
+    else{
+        cout<<"Error: Division by zero is not allowed."<<endl;
+        return 0; 
+    }
+}
+
+int main(){
+    double quotient1 = divide();
+    double quotient2 = divide();
+
+    cout<<"Quotient 1: " << quotient1 <<endl;
+    cout<<"Quotient 2: " << quotient2 <<endl;
+
+    cout << "Quotient: "<<quotient1<<";" <<quotient2<<endl;
+
+    return 0;
+}
