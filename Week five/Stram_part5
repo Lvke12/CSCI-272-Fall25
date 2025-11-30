@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    double pi = 3.14159;
+
+    //convert double to string
+    string strValue = to_string(pi);
+
+    const char* charptr = strValue.c_str();
+
+    //print the double and char*
+
+    cout << "Double: " << pi << endl;
+    cout << "String: " << strValue << endl;
+    cout << "Char*: " << charptr << endl;
+    
+    cout.write(charptr, 7);//write the first 4 characters of charptr
+
+
+
+return 0;
+}
