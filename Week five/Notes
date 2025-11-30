@@ -1,0 +1,13 @@
+//Stream is a sequence of bytes
+//when you write something on your keyboard and then it goes to the system 
+//low level: communicate in bytes and bits | high level: C++ a lot og translating in communication (organized and formatted input & output)
+If the volume is larger you have to go to a lower level in an organized way
+
+cerr -> unbuffered    |     clog -> buffered
+                        won't be used right away but it is saved bc it'll be used eventually 
+                        It doesn't need any priority right away
+
+//Input output manipulatio = iomanip
+
+Alias : replace int with something else or anything in general can be replaced with another name
+
