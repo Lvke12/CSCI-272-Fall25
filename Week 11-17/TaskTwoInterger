@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+class Interger {
+private:
+    int value; //actual int we are wrapping
+
+public:
+    //constructor
+    Interger(int val = 0) {
+        value = val;
+    }
+
+    //getter
+    int getValue() const {
+        return value;
+    }
+
+    //Overload the + operator to add two Interger objects
+    //ex. Interger c = a + b;
+    Interger operator+(const Interger& other) const {
+        //Create a new Interger object whose value is the sum of BOTH values
+        return Interger(this -> value + other.value);
+    }
+
+};
+
+//main
+int main() {
+    Interger num1(6);
+    Interger num2(7);
+
+    //use overloaded + operator
+    //calls num1.operator+(num2)
+    Interger sum = num1 + num2; //calls Interger::operator+()
+
+    cout << "num1: " << num1.getValue() << endl;
+    cout << "num2: " << num2.getValue() << endl;
+
+    cout << "Sum of " << num1.getValue() << " and " << num2.getValue() << " is: " << sum.getValue() << endl;
+
+    return 0;       
+}
